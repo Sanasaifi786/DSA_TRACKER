@@ -13,11 +13,11 @@ const questionSchema = new Schema({
     },
     difficulty:{
         type: String,
-        required: true
+        required: true,
+        enum: ['Easy','Medium','Hard']
     },
     link:{
-        type :String,
-        enum: ['Easy','Medium','Hard']
+        type :String
     },
     order:{
         type:Number,

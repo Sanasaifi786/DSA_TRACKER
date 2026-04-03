@@ -28,6 +28,9 @@ const userSchema = new Schema({
         type:String,
         required: [true,"password is required"]
     },
+    refreshToken:{
+        type:String
+    },
     createdAt:{
         type:Date,
         default: Date.now
@@ -52,7 +55,7 @@ userSchema.methods.generateAccessToken = function(){
     return jwt.sign({
         _id: this._id,
         email:this.email,
-        username: this.usename,
+        username: this.username,
         fullname: this.fullName  
     },
     process.env.ACCESS_TOKEN_SECRET,
@@ -71,6 +74,17 @@ userSchema.methods.generateRefreshToken = function(){
         expiresIn: process.env.REFRESH_TOKEN_EXPIRY
     }
 )
+}
+
+userSchema.methods.generateAccessAndRefreshToken = async function(){
+    const accessToken = this.generateAccessToken();
+    const refreshToken = this.generateRefreshToken();
+
+    // Save refreshToken in DB
+    this.refreshToken = refreshToken;
+    await this.save({ validateBeforeSave: false });
+
+    return { accessToken, refreshToken };
 }
 
 export const User = mongoose.model("User",userSchema);
