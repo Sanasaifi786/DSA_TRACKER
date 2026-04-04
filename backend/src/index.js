@@ -4,6 +4,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import morgan from "morgan";
+import connectDB from "./db/index.db.js";
+import authRoutes from "./routes/auth.routes.js";
 
 dotenv.config({
     path: "./.env"
@@ -14,7 +16,7 @@ const app = express();
 // Middlewares
 app.use(cors({
     origin: process.env.CORS_ORIGIN || "http://localhost:5173",
-    credentials: true  // cookies allow karne ke liye
+    credentials: true
 }));
 app.use(helmet());
 app.use(morgan("dev"));
@@ -22,11 +24,19 @@ app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
 
-// Routes (baad mein add honge)
-// import authRoutes from "./routes/auth.routes.js";
-// app.use("/api/v1/auth", authRoutes);
+// Routes
+app.use("/api/v1/auth", authRoutes);
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
-})
+// Pehle DB connect karo, phir server start karo
+connectDB()
+    .then(() => {
+        app.listen(process.env.PORT, () => {
+            console.log(`🚀 Server is running on port ${process.env.PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error("❌ Server failed to start:", error.message);
+        process.exit(1);
+    });
+
 

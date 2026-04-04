@@ -1,5 +1,4 @@
 import { User } from "../model/user.model.js";
-import express from "express";
 
 const registerUser = async(req,res) =>{
     try{
@@ -45,7 +44,7 @@ const loginUser = async(req,res) =>{
             return res.status(401).json({message: "Invalid password"});
         }
 
-        const {accessToken,refreshToken} = user.generateAccessAndRefreshToken();
+        const {accessToken,refreshToken} = await user.generateAccessAndRefreshToken();
         console.log(accessToken,refreshToken);
         return res.status(200).json({
             message: "User logged in successfully",
@@ -61,30 +60,33 @@ const loginUser = async(req,res) =>{
     }
 }
 
-// const logoutUser = asyncHandler(async (req, res) => {
-//   // remove cookie and accesToken and refreshToken
-//   await User.findByIdAndUpdate(
-//     req.user._id,
-//     {
-//       $unset: {
-//         refreshToken: 1
-//       }
-//     },
-//     {
-//       new: true
-//     }
-//   )
+const logoutUser = async (req, res) => {
+    try {
+        // DB se refreshToken hata do (req.user middleware se aata hai)
+        await User.findByIdAndUpdate(
+            req.user._id,
+            {
+                $unset: { refreshToken: 1 }  // field delete karo
+            },
+            { new: true }
+        );
 
-//   const options = {
-//     httpOnly: true,
-//     secure: process.env.NODE_ENV === "production"
-//   }
+        // Cookie options — httpOnly se JS access nahi kar sakti
+        const options = {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production"
+        };
 
-//   return res.status(200)
-//     .clearCookie("accessToken", options)
-//     .clearCookie("refreshToken", options)
-//     .json(new ApiResponse(200, {}, "User Logged Out"))
+        return res
+            .status(200)
+            .clearCookie("accessToken", options)
+            .clearCookie("refreshToken", options)
+            .json({ message: "User logged out successfully" });
 
-// })
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
 
-export {registerUser,loginUser};
+export { registerUser, loginUser, logoutUser };
