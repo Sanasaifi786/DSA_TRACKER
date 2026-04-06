@@ -17,13 +17,17 @@ const questionSchema = new Schema({
         enum: ['Easy','Medium','Hard']
     },
     link:{
-        type :String
+        type: String
     },
     order:{
         type:Number,
         required:true
     },
-
+    sheet:{
+        type: String,
+        required: true,
+        enum: ['striver', 'lovebabbar', 'daily']
+    }
 },{
     timestamps:true
 })
