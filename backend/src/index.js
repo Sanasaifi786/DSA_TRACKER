@@ -8,6 +8,7 @@ import connectDB from "./db/index.db.js";
 import authRoutes from "./routes/auth.routes.js";
 import questionsRoutes from "./routes/questions.routes.js";
 import progressRoutes from "./routes/progress.routes.js";
+import aiRoutes from "./routes/ai.routes.js";
 
 dotenv.config({
     path: "./.env"
@@ -30,6 +31,7 @@ app.use(cookieParser());
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/questions", questionsRoutes);
 app.use("/api/v1/progress", progressRoutes);
+app.use("/api/v1/ai", aiRoutes);
 
 // Pehle DB connect karo, phir server start karo
 connectDB()
