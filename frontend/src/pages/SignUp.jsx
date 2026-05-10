@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-function SignIn() {
+function SignUp() {
     const navigate = useNavigate();
 
-    // Backend loginUser expects: email, password
+    // Backend registerUser expects: fullName, username, email, password
     const [formData, setFormData] = useState({
+        fullName: "",
+        username: "",
         email: "",
         password: ""
     });
@@ -23,7 +25,7 @@ function SignIn() {
         setError("");
 
         try {
-            const res = await fetch("http://localhost:8000/api/v1/auth/login", {
+            const res = await fetch("http://localhost:8000/api/v1/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
@@ -36,13 +38,8 @@ function SignIn() {
                 return;
             }
 
-            // Store tokens in localStorage
-            localStorage.setItem("accessToken", data.accessToken);
-            localStorage.setItem("refreshToken", data.refreshToken);
-            localStorage.setItem("user", JSON.stringify(data.user));
-
-            // Redirect to home after login
-            navigate("/");
+            // Registration successful → redirect to login
+            navigate("/signin");
 
         } catch (err) {
             setError("Something went wrong. Try again.");
@@ -53,8 +50,28 @@ function SignIn() {
 
     return (
         <div>
-            <h2>Sign In</h2>
+            <h2>Create Account</h2>
             <form onSubmit={handleSubmit}>
+
+                <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Enter your Full Name"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                />
+                <br />
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter your Username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    required
+                />
+                <br />
 
                 <input
                     type="email"
@@ -79,16 +96,16 @@ function SignIn() {
                 {error && <p style={{ color: "red" }}>{error}</p>}
 
                 <button type="submit" disabled={loading}>
-                    {loading ? "Signing In..." : "Sign In"}
+                    {loading ? "Registering..." : "Register"}
                 </button>
 
             </form>
 
             <p>
-                Don't have an account? <Link to="/signup">Sign Up</Link>
+                Already have an account? <Link to="/signin">Sign In</Link>
             </p>
         </div>
     );
 }
 
-export default SignIn;
+export default SignUp;

@@ -23,6 +23,11 @@ const registerUser = async(req,res) =>{
     }
     catch(error){
         console.log(error);
+        // MongoDB duplicate key error (email or username already taken)
+        if(error.code === 11000){
+            const field = Object.keys(error.keyValue)[0]; // "email" or "username"
+            return res.status(400).json({message: `${field} already exists. Please use a different one.`});
+        }
         return res.status(500).json({message:"Internal server error"});
     }
 }
