@@ -7,16 +7,38 @@
 }
 
 :root {
-    --bg: #0a0a14;
-    --bg-card: #12121f;
-    --border: rgba(255, 255, 255, 0.08);
-    --text: rgba(255, 255, 255, 0.65);
-    --text-heading: #ffffff;
-    --accent: #6366f1;
-    --accent-2: #a855f7;
+    /* ── Backgrounds ── */
+    --bg:          #0c0c0c;
+    --bg-card:     #161616;
+    --bg-hover:    #1e1e1e;
+
+    /* ── Borders ── */
+    --border:      rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(245, 158, 11, 0.35);
+
+    /* ── Text ── */
+    --text:        rgba(255, 255, 255, 0.55);
+    --text-muted:  rgba(255, 255, 255, 0.35);
+    --text-heading: #f5f5f5;
+
+    /* ── Amber Accent ── */
+    --amber:        #f59e0b;
+    --amber-light:  #fbbf24;
+    --amber-dark:   #d97706;
+    --amber-glow:   rgba(245, 158, 11, 0.2);
+    --amber-subtle: rgba(245, 158, 11, 0.08);
+
+    /* ── Grey ── */
+    --grey-1: #1e1e1e;
+    --grey-2: #2a2a2a;
+    --grey-3: #3f3f3f;
+    --grey-4: #6b7280;
+    --grey-5: #9ca3af;
+
+    /* ── Status Colors ── */
     --success: #22c55e;
+    --danger:  #f87171;
     --warning: #f59e0b;
-    --danger: #f87171;
 }
 
 body {
