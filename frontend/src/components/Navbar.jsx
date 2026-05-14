@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext.jsx";
 import "./Navbar.css";
 
 function Navbar() {
     const navigate = useNavigate();
+    const { theme, toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
 
-    // Check if user is logged in via localStorage
     const user = JSON.parse(localStorage.getItem("user") || "null");
     const isLoggedIn = !!user;
 
@@ -24,7 +25,6 @@ function Navbar() {
         } catch (err) {
             // Still logout on frontend even if request fails
         }
-
         localStorage.removeItem("accessToken");
         localStorage.removeItem("refreshToken");
         localStorage.removeItem("user");
@@ -33,6 +33,7 @@ function Navbar() {
 
     return (
         <nav className="navbar">
+
             {/* ── Logo ── */}
             <Link to="/" className="navbar-logo">
                 🧩 <span>SkillPath</span>
@@ -59,8 +60,18 @@ function Navbar() {
                 )}
             </div>
 
-            {/* ── Auth Section ── */}
+            {/* ── Right Side ── */}
             <div className="navbar-auth">
+                {/* Theme Toggle */}
+                <button
+                    className="theme-toggle"
+                    onClick={toggleTheme}
+                    aria-label="Toggle theme"
+                    title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                >
+                    {theme === "dark" ? "☀️" : "🌙"}
+                </button>
+
                 {isLoggedIn ? (
                     <>
                         <span className="navbar-username">
@@ -97,6 +108,13 @@ function Navbar() {
                     {isLoggedIn && (
                         <NavLink to="/progress" className="mobile-link">My Progress</NavLink>
                     )}
+                    <hr className="mobile-divider" />
+                    <button
+                        className="mobile-link mobile-theme-toggle"
+                        onClick={(e) => { e.stopPropagation(); toggleTheme(); }}
+                    >
+                        {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
+                    </button>
                     <hr className="mobile-divider" />
                     {isLoggedIn ? (
                         <button className="mobile-link btn-logout-mobile" onClick={handleLogout}>

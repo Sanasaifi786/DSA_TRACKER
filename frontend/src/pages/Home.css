@@ -18,7 +18,6 @@
     position: relative;
 }
 
-/* Warm amber radial glow */
 .hero::before {
     content: "";
     position: absolute;
@@ -27,7 +26,7 @@
     transform: translateX(-50%);
     width: 700px;
     height: 400px;
-    background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, var(--hero-glow) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -40,18 +39,18 @@
     gap: 8px;
     padding: 6px 16px;
     border-radius: 999px;
-    background: rgba(245, 158, 11, 0.08);
+    background: var(--amber-subtle);
     border: 1px solid rgba(245, 158, 11, 0.25);
     font-size: 0.8rem;
     font-weight: 500;
-    color: #fbbf24;
+    color: var(--amber-light);
     letter-spacing: 0.3px;
 }
 
 .hero-title {
     font-size: clamp(2.4rem, 6vw, 4rem);
     font-weight: 700;
-    color: #f5f5f5;
+    color: var(--text-heading);
     line-height: 1.15;
     letter-spacing: -1.5px;
     margin: 0;
@@ -68,7 +67,7 @@
     max-width: 560px;
     font-size: 1.05rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--text-muted);
 }
 
 /* ── CTA Buttons ── */
@@ -102,16 +101,16 @@
     border-radius: 10px;
     font-size: 0.95rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--text);
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
     transition: all 0.25s;
 }
 
 .btn-ghost:hover {
     border-color: rgba(245, 158, 11, 0.3);
-    color: #fbbf24;
-    background: rgba(245, 158, 11, 0.05);
+    color: var(--amber);
+    background: var(--amber-subtle);
 }
 
 /* ── Stats Row ── */
@@ -120,8 +119,8 @@
     align-items: center;
     gap: 32px;
     padding: 24px 40px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: var(--stat-bg);
+    border: 1px solid var(--border);
     border-radius: 16px;
     flex-wrap: wrap;
     justify-content: center;
@@ -138,13 +137,13 @@
 .stat-number {
     font-size: 1.6rem;
     font-weight: 700;
-    color: #fbbf24;
+    color: var(--amber-light);
     letter-spacing: -0.5px;
 }
 
 .stat-label {
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.6px;
 }
@@ -152,21 +151,21 @@
 .stat-divider {
     width: 1px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--border);
 }
 
 /* ── Section Headers ── */
 .section-title {
     font-size: 1.9rem;
     font-weight: 700;
-    color: #f5f5f5;
+    color: var(--text-heading);
     letter-spacing: -0.5px;
     margin: 0 0 8px;
 }
 
 .section-subtitle {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.38);
+    color: var(--text-muted);
     margin: 0 0 48px;
 }
 
@@ -186,8 +185,8 @@
 }
 
 .sheet-card {
-    background: #111111;
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 28px;
     display: flex;
@@ -210,30 +209,25 @@
 
 .sheet-card:hover {
     border-color: var(--card-color);
-    background: #161616;
+    background: var(--bg-card-hover);
     transform: translateY(-4px);
     box-shadow: 0 16px 48px var(--card-glow);
 }
 
-.sheet-card:hover::before {
-    opacity: 1;
-}
+.sheet-card:hover::before { opacity: 1; }
 
-.sheet-icon {
-    font-size: 2rem;
-    line-height: 1;
-}
+.sheet-icon { font-size: 2rem; line-height: 1; }
 
 .sheet-name {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #f5f5f5;
+    color: var(--text-heading);
     margin: 0;
 }
 
 .sheet-desc {
     font-size: 0.865rem;
-    color: rgba(255, 255, 255, 0.42);
+    color: var(--text-muted);
     line-height: 1.65;
     margin: 0;
 }
@@ -246,7 +240,7 @@
 
 .sheet-level {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--text-muted);
     font-style: italic;
 }
 
@@ -256,19 +250,15 @@
     color: var(--card-color);
 }
 
-.sheet-topics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
+.sheet-topics { display: flex; flex-wrap: wrap; gap: 6px; }
 
 .topic-tag {
     font-size: 0.72rem;
     padding: 3px 10px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.45);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
 }
 
 .sheet-btn {
@@ -288,10 +278,7 @@
     opacity: 0.9;
 }
 
-.sheet-btn:hover {
-    opacity: 1;
-    transform: translateX(4px);
-}
+.sheet-btn:hover { opacity: 1; transform: translateX(4px); }
 
 /* ── Features Section ── */
 .features-section {
@@ -309,8 +296,8 @@
 }
 
 .feature-card {
-    background: #111111;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 14px;
     padding: 24px;
     display: flex;
@@ -320,24 +307,22 @@
 }
 
 .feature-card:hover {
-    border-color: rgba(245, 158, 11, 0.25);
-    background: #161616;
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
 }
 
-.feature-icon {
-    font-size: 1.5rem;
-}
+.feature-icon { font-size: 1.5rem; }
 
 .feature-title {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #f5f5f5;
+    color: var(--text-heading);
     margin: 0;
 }
 
 .feature-desc {
     font-size: 0.83rem;
-    color: rgba(255, 255, 255, 0.38);
+    color: var(--text-muted);
     line-height: 1.6;
     margin: 0;
 }
@@ -351,7 +336,7 @@
     text-align: center;
     padding: 64px 24px;
     margin: 0 24px;
-    background: linear-gradient(135deg, rgba(245,158,11,0.07), rgba(251,146,60,0.07));
+    background: linear-gradient(135deg, var(--amber-subtle), rgba(251,146,60,0.06));
     border: 1px solid rgba(245, 158, 11, 0.18);
     border-radius: 24px;
 }
@@ -359,14 +344,14 @@
 .cta-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #f5f5f5;
+    color: var(--text-heading);
     margin: 0;
     letter-spacing: -0.5px;
 }
 
 .cta-subtitle {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.42);
+    color: var(--text-muted);
     max-width: 460px;
     line-height: 1.6;
     margin: 0;
