@@ -20,7 +20,7 @@ Stay consistent. Stay sharp. Land your dream job.
 - ✅ **Progress Tracking** — Mark questions solved, see live stats
 - 🔐 **Authentication** — Register, Login, Logout with JWT
 - 🌙 **Dark / Light Mode** — Smooth theme toggle, saved in localStorage
-- 🤖 **AI Insights** — Gemini-powered weak topic detection & study plan
+- 🤖 **AI Insights** — Gemini-powered weak topic detection
 - 📱 **Responsive** — Works on mobile and desktop
 
 ---
