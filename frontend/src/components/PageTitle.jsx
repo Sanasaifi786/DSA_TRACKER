@@ -3,13 +3,13 @@ import { useLocation } from "react-router-dom";
 
 // Map of route paths → page titles
 const pageTitles = {
-    "/":                  "Home | SkillPath",
-    "/signin":            "Sign In | SkillPath",
-    "/signup":            "Sign Up | SkillPath",
-    "/progress":          "My Progress | SkillPath",
-    "/sheet/striver":     "Striver Sheet | SkillPath",
-    "/sheet/lovebabbar":  "Love Babbar Sheet | SkillPath",
-    "/sheet/daily":       "Daily Challenge | SkillPath",
+    "/": "Home | SkillPath",
+    "/signin": "Sign In | SkillPath",
+    "/signup": "Sign Up | SkillPath",
+    "/progress": "My Progress | SkillPath",
+    "/sheet/striver": "Striver Sheet | SkillPath",
+    "/sheet/lovebabbar": "Love Babbar Sheet | SkillPath",
+    "/sheet/daily": "Daily Challenge | SkillPath",
 };
 
 function PageTitle() {
