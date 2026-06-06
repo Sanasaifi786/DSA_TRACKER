@@ -165,7 +165,7 @@ function Home() {
             </section>
 
             {/* ── Features ── */}
-            <section className="features-section">
+            {/* <section className="features-section">
                 <h2 className="section-title">Everything You Need</h2>
                 <p className="section-subtitle">Built to make your DSA prep smarter and faster</p>
                 <div className="features-grid">
@@ -177,7 +177,7 @@ function Home() {
                         </div>
                     ))}
                 </div>
-            </section>
+            </section> */}
 
             {/* ── CTA Banner ── */}
             {!user && (
