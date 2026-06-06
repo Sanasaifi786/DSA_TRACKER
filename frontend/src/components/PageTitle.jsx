@@ -7,6 +7,7 @@ const pageTitles = {
     "/signin": "Sign In | SkillPath",
     "/signup": "Sign Up | SkillPath",
     "/progress": "My Progress | SkillPath",
+    "/ai-insights": "AI Insights | SkillPath",
     "/sheet/striver": "Striver Sheet | SkillPath",
     "/sheet/lovebabbar": "Love Babbar Sheet | SkillPath",
     "/sheet/daily": "Daily Challenge | SkillPath",
