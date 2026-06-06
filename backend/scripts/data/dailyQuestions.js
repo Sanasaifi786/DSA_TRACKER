@@ -1,0 +1,73 @@
+export const dailyQuestions = [
+    // ── Day 1-10: Arrays & Hashing ───────────────────────────────
+    { title: "Two Sum", topic: "Arrays", difficulty: "Easy", link: "https://leetcode.com/problems/two-sum/", order: 1, sheet: "daily" },
+    { title: "Valid Anagram", topic: "Strings", difficulty: "Easy", link: "https://leetcode.com/problems/valid-anagram/", order: 2, sheet: "daily" },
+    { title: "Contains Duplicate", topic: "Arrays", difficulty: "Easy", link: "https://leetcode.com/problems/contains-duplicate/", order: 3, sheet: "daily" },
+    { title: "Group Anagrams", topic: "Arrays", difficulty: "Medium", link: "https://leetcode.com/problems/group-anagrams/", order: 4, sheet: "daily" },
+    { title: "Top K Frequent Elements", topic: "Arrays", difficulty: "Medium", link: "https://leetcode.com/problems/top-k-frequent-elements/", order: 5, sheet: "daily" },
+    { title: "Product of Array Except Self", topic: "Arrays", difficulty: "Medium", link: "https://leetcode.com/problems/product-of-array-except-self/", order: 6, sheet: "daily" },
+    { title: "Longest Consecutive Sequence", topic: "Arrays", difficulty: "Medium", link: "https://leetcode.com/problems/longest-consecutive-sequence/", order: 7, sheet: "daily" },
+    { title: "Valid Sudoku", topic: "Arrays", difficulty: "Medium", link: "https://leetcode.com/problems/valid-sudoku/", order: 8, sheet: "daily" },
+    { title: "Encode and Decode Strings", topic: "Strings", difficulty: "Medium", link: "https://leetcode.com/problems/encode-and-decode-strings/", order: 9, sheet: "daily" },
+    { title: "Find All Anagrams in a String", topic: "Strings", difficulty: "Medium", link: "https://leetcode.com/problems/find-all-anagrams-in-a-string/", order: 10, sheet: "daily" },
+
+    // ── Day 11-20: Two Pointers & Sliding Window ─────────────────
+    { title: "Valid Palindrome", topic: "Two Pointers", difficulty: "Easy", link: "https://leetcode.com/problems/valid-palindrome/", order: 11, sheet: "daily" },
+    { title: "Two Sum II", topic: "Two Pointers", difficulty: "Medium", link: "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/", order: 12, sheet: "daily" },
+    { title: "3Sum", topic: "Two Pointers", difficulty: "Medium", link: "https://leetcode.com/problems/3sum/", order: 13, sheet: "daily" },
+    { title: "Container With Most Water", topic: "Two Pointers", difficulty: "Medium", link: "https://leetcode.com/problems/container-with-most-water/", order: 14, sheet: "daily" },
+    { title: "Trapping Rain Water", topic: "Two Pointers", difficulty: "Hard", link: "https://leetcode.com/problems/trapping-rain-water/", order: 15, sheet: "daily" },
+    { title: "Best Time to Buy and Sell Stock", topic: "Sliding Window", difficulty: "Easy", link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/", order: 16, sheet: "daily" },
+    { title: "Longest Substring Without Repeating Characters", topic: "Sliding Window", difficulty: "Medium", link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/", order: 17, sheet: "daily" },
+    { title: "Longest Repeating Character Replacement", topic: "Sliding Window", difficulty: "Medium", link: "https://leetcode.com/problems/longest-repeating-character-replacement/", order: 18, sheet: "daily" },
+    { title: "Permutation in String", topic: "Sliding Window", difficulty: "Medium", link: "https://leetcode.com/problems/permutation-in-string/", order: 19, sheet: "daily" },
+    { title: "Minimum Window Substring", topic: "Sliding Window", difficulty: "Hard", link: "https://leetcode.com/problems/minimum-window-substring/", order: 20, sheet: "daily" },
+
+    // ── Day 21-30: Stack ─────────────────────────────────────────
+    { title: "Valid Parentheses", topic: "Stack", difficulty: "Easy", link: "https://leetcode.com/problems/valid-parentheses/", order: 21, sheet: "daily" },
+    { title: "Min Stack", topic: "Stack", difficulty: "Medium", link: "https://leetcode.com/problems/min-stack/", order: 22, sheet: "daily" },
+    { title: "Evaluate Reverse Polish Notation", topic: "Stack", difficulty: "Medium", link: "https://leetcode.com/problems/evaluate-reverse-polish-notation/", order: 23, sheet: "daily" },
+    { title: "Generate Parentheses", topic: "Stack", difficulty: "Medium", link: "https://leetcode.com/problems/generate-parentheses/", order: 24, sheet: "daily" },
+    { title: "Daily Temperatures", topic: "Stack", difficulty: "Medium", link: "https://leetcode.com/problems/daily-temperatures/", order: 25, sheet: "daily" },
+    { title: "Largest Rectangle in Histogram", topic: "Stack", difficulty: "Hard", link: "https://leetcode.com/problems/largest-rectangle-in-histogram/", order: 26, sheet: "daily" },
+    { title: "Next Greater Element I", topic: "Stack", difficulty: "Easy", link: "https://leetcode.com/problems/next-greater-element-i/", order: 27, sheet: "daily" },
+    { title: "Decode String", topic: "Stack", difficulty: "Medium", link: "https://leetcode.com/problems/decode-string/", order: 28, sheet: "daily" },
+    { title: "Asteroid Collision", topic: "Stack", difficulty: "Medium", link: "https://leetcode.com/problems/asteroid-collision/", order: 29, sheet: "daily" },
+    { title: "Remove K Digits", topic: "Stack", difficulty: "Medium", link: "https://leetcode.com/problems/remove-k-digits/", order: 30, sheet: "daily" },
+
+    // ── Day 31-40: Binary Search ─────────────────────────────────
+    { title: "Binary Search", topic: "Binary Search", difficulty: "Easy", link: "https://leetcode.com/problems/binary-search/", order: 31, sheet: "daily" },
+    { title: "Search a 2D Matrix", topic: "Binary Search", difficulty: "Medium", link: "https://leetcode.com/problems/search-a-2d-matrix/", order: 32, sheet: "daily" },
+    { title: "Koko Eating Bananas", topic: "Binary Search", difficulty: "Medium", link: "https://leetcode.com/problems/koko-eating-bananas/", order: 33, sheet: "daily" },
+    { title: "Find Minimum in Rotated Sorted Array", topic: "Binary Search", difficulty: "Medium", link: "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/", order: 34, sheet: "daily" },
+    { title: "Search in Rotated Sorted Array", topic: "Binary Search", difficulty: "Medium", link: "https://leetcode.com/problems/search-in-rotated-sorted-array/", order: 35, sheet: "daily" },
+    { title: "Median of Two Sorted Arrays", topic: "Binary Search", difficulty: "Hard", link: "https://leetcode.com/problems/median-of-two-sorted-arrays/", order: 36, sheet: "daily" },
+    { title: "Find Peak Element", topic: "Binary Search", difficulty: "Medium", link: "https://leetcode.com/problems/find-peak-element/", order: 37, sheet: "daily" },
+    { title: "First Bad Version", topic: "Binary Search", difficulty: "Easy", link: "https://leetcode.com/problems/first-bad-version/", order: 38, sheet: "daily" },
+    { title: "Sqrt(x)", topic: "Binary Search", difficulty: "Easy", link: "https://leetcode.com/problems/sqrtx/", order: 39, sheet: "daily" },
+    { title: "Capacity to Ship Packages", topic: "Binary Search", difficulty: "Medium", link: "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/", order: 40, sheet: "daily" },
+
+    // ── Day 41-50: Trees ─────────────────────────────────────────
+    { title: "Invert Binary Tree", topic: "Trees", difficulty: "Easy", link: "https://leetcode.com/problems/invert-binary-tree/", order: 41, sheet: "daily" },
+    { title: "Maximum Depth of Binary Tree", topic: "Trees", difficulty: "Easy", link: "https://leetcode.com/problems/maximum-depth-of-binary-tree/", order: 42, sheet: "daily" },
+    { title: "Balanced Binary Tree", topic: "Trees", difficulty: "Easy", link: "https://leetcode.com/problems/balanced-binary-tree/", order: 43, sheet: "daily" },
+    { title: "Binary Tree Level Order Traversal", topic: "Trees", difficulty: "Medium", link: "https://leetcode.com/problems/binary-tree-level-order-traversal/", order: 44, sheet: "daily" },
+    { title: "Lowest Common Ancestor", topic: "Trees", difficulty: "Medium", link: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/", order: 45, sheet: "daily" },
+    { title: "Binary Tree Right Side View", topic: "Trees", difficulty: "Medium", link: "https://leetcode.com/problems/binary-tree-right-side-view/", order: 46, sheet: "daily" },
+    { title: "Count Good Nodes in Binary Tree", topic: "Trees", difficulty: "Medium", link: "https://leetcode.com/problems/count-good-nodes-in-binary-tree/", order: 47, sheet: "daily" },
+    { title: "Binary Tree Maximum Path Sum", topic: "Trees", difficulty: "Hard", link: "https://leetcode.com/problems/binary-tree-maximum-path-sum/", order: 48, sheet: "daily" },
+    { title: "Kth Smallest Element in BST", topic: "Trees", difficulty: "Medium", link: "https://leetcode.com/problems/kth-smallest-element-in-a-bst/", order: 49, sheet: "daily" },
+    { title: "Validate Binary Search Tree", topic: "Trees", difficulty: "Medium", link: "https://leetcode.com/problems/validate-binary-search-tree/", order: 50, sheet: "daily" },
+
+    // ── Day 51-60: Graphs & DP ───────────────────────────────────
+    { title: "Number of Islands", topic: "Graphs", difficulty: "Medium", link: "https://leetcode.com/problems/number-of-islands/", order: 51, sheet: "daily" },
+    { title: "Course Schedule", topic: "Graphs", difficulty: "Medium", link: "https://leetcode.com/problems/course-schedule/", order: 52, sheet: "daily" },
+    { title: "Clone Graph", topic: "Graphs", difficulty: "Medium", link: "https://leetcode.com/problems/clone-graph/", order: 53, sheet: "daily" },
+    { title: "Climbing Stairs", topic: "Dynamic Programming", difficulty: "Easy", link: "https://leetcode.com/problems/climbing-stairs/", order: 54, sheet: "daily" },
+    { title: "House Robber", topic: "Dynamic Programming", difficulty: "Medium", link: "https://leetcode.com/problems/house-robber/", order: 55, sheet: "daily" },
+    { title: "Coin Change", topic: "Dynamic Programming", difficulty: "Medium", link: "https://leetcode.com/problems/coin-change/", order: 56, sheet: "daily" },
+    { title: "Longest Common Subsequence", topic: "Dynamic Programming", difficulty: "Medium", link: "https://leetcode.com/problems/longest-common-subsequence/", order: 57, sheet: "daily" },
+    { title: "Unique Paths", topic: "Dynamic Programming", difficulty: "Medium", link: "https://leetcode.com/problems/unique-paths/", order: 58, sheet: "daily" },
+    { title: "Jump Game", topic: "Dynamic Programming", difficulty: "Medium", link: "https://leetcode.com/problems/jump-game/", order: 59, sheet: "daily" },
+    { title: "Word Break", topic: "Dynamic Programming", difficulty: "Medium", link: "https://leetcode.com/problems/word-break/", order: 60, sheet: "daily" },
+];
