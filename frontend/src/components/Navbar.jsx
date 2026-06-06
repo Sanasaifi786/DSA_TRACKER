@@ -1,33 +1,25 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
 import "./Navbar.css";
 
 function Navbar() {
     const navigate = useNavigate();
     const { theme, toggleTheme } = useTheme();
+    const { user, isLoggedIn, logout } = useAuth();
     const [menuOpen, setMenuOpen] = useState(false);
-
-    const user = JSON.parse(localStorage.getItem("user") || "null");
-    const isLoggedIn = !!user;
 
     const handleLogout = async () => {
         try {
             const token = localStorage.getItem("accessToken");
             await fetch("http://localhost:8000/api/v1/auth/logout", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
+                headers: { Authorization: `Bearer ${token}` },
                 credentials: "include",
             });
-        } catch (err) {
-            // Still logout on frontend even if request fails
-        }
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
-        localStorage.removeItem("user");
+        } catch {}
+        logout();       // clears AuthContext + localStorage
         navigate("/signin");
     };
 
