@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.jsx";
 import "./Auth.css";
 
 function SignUp() {
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const [formData, setFormData] = useState({
         fullName: "",
@@ -36,7 +38,20 @@ function SignUp() {
                 return;
             }
 
-            navigate("/signin");
+            // Automatically log in the user
+            const loginRes = await fetch("http://localhost:8000/api/v1/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: formData.email, password: formData.password })
+            });
+
+            const loginData = await loginRes.json();
+            if (loginRes.ok) {
+                login(loginData);
+                navigate("/");
+            } else {
+                navigate("/signin");
+            }
 
         } catch {
             setError("Something went wrong. Try again.");
