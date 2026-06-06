@@ -9,14 +9,16 @@ import { striverQuestions }    from "./data/striverQuestions.js";
 import { lovebabbarQuestions } from "./data/lovebabbarQuestions.js";
 import { dailyQuestions }      from "./data/dailyQuestions.js";
 
+import { DB_NAME }  from "../src/constants.js";
+
 dotenv.config();
 
 const allQuestions = [...striverQuestions, ...lovebabbarQuestions, ...dailyQuestions];
 
 const seedDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URI);
-        console.log("✅ MongoDB connected");
+        await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
+        console.log("✅ MongoDB connected to " + DB_NAME);
 
         // Clear existing data
         await Question.deleteMany({});
