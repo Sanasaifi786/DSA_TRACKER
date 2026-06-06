@@ -52,9 +52,9 @@ function Home() {
         const fetchCounts = async () => {
             try {
                 const [s, l, d] = await Promise.all([
-                    fetch("http://localhost:8000/api/v1/questions?sheet=striver"),
-                    fetch("http://localhost:8000/api/v1/questions?sheet=lovebabbar"),
-                    fetch("http://localhost:8000/api/v1/questions?sheet=daily"),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/questions?sheet=striver`),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/questions?sheet=lovebabbar`),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/questions?sheet=daily`),
                 ]);
                 const [sData, lData, dData] = await Promise.all([s.json(), l.json(), d.json()]);
 

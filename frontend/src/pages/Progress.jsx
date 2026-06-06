@@ -25,8 +25,8 @@ function Progress() {
                 const headers = { Authorization: `Bearer ${token}` };
 
                 const [progressRes, topicRes] = await Promise.all([
-                    fetch("http://localhost:8000/api/v1/progress",            { headers }),
-                    fetch("http://localhost:8000/api/v1/progress/topic-count",{ headers }),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/progress`,            { headers }),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/progress/topic-count`,{ headers }),
                 ]);
 
                 const progressData = await progressRes.json();

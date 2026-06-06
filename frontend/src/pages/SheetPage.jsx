@@ -47,7 +47,7 @@ function SheetPage() {
     const fetchProgress = useCallback(async () => {
         if (!isLoggedIn) return;
         try {
-            const res  = await fetch("http://localhost:8000/api/v1/progress", {
+            const res  = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/progress`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const data = await res.json();

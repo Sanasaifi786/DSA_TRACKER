@@ -26,7 +26,7 @@ function SignUp() {
         setError("");
 
         try {
-            const res  = await fetch("http://localhost:8000/api/v1/auth/register", {
+            const res  = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/auth/register`, {
                 method:  "POST",
                 headers: { "Content-Type": "application/json" },
                 body:    JSON.stringify(formData)
@@ -39,7 +39,7 @@ function SignUp() {
             }
 
             // Automatically log in the user
-            const loginRes = await fetch("http://localhost:8000/api/v1/auth/login", {
+            const loginRes = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: formData.email, password: formData.password })

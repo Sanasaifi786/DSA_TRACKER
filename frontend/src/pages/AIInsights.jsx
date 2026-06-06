@@ -25,8 +25,8 @@ function AIInsights() {
                 const headers = { Authorization: `Bearer ${token}` };
 
                 const [planRes, recsRes] = await Promise.all([
-                    fetch("http://localhost:8000/api/v1/ai/weak-topics", { headers }),
-                    fetch("http://localhost:8000/api/v1/ai/recommend",   { headers }),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/ai/weak-topics`, { headers }),
+                    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/ai/recommend`,   { headers }),
                 ]);
 
                 const planData = await planRes.json();
