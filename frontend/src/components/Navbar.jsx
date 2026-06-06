@@ -50,6 +50,11 @@ function Navbar() {
                         My Progress
                     </NavLink>
                 )}
+                {isLoggedIn && (
+                    <NavLink to="/ai-insights" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                        🤖 AI Insights
+                    </NavLink>
+                )}
             </div>
 
             {/* ── Right Side ── */}
@@ -99,6 +104,9 @@ function Navbar() {
                     <NavLink to="/sheet/daily" className="mobile-link">Daily Challenge</NavLink>
                     {isLoggedIn && (
                         <NavLink to="/progress" className="mobile-link">My Progress</NavLink>
+                    )}
+                    {isLoggedIn && (
+                        <NavLink to="/ai-insights" className="mobile-link">🤖 AI Insights</NavLink>
                     )}
                     <hr className="mobile-divider" />
                     <button
