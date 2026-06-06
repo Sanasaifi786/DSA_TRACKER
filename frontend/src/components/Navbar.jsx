@@ -71,9 +71,14 @@ function Navbar() {
 
                 {isLoggedIn ? (
                     <>
-                        <span className="navbar-username">
-                            👤 {user.username || user.fullName}
-                        </span>
+                        <div className="user-profile-chip">
+                            <div className="user-avatar">
+                                {(user.username || user.fullName || "U")[0].toUpperCase()}
+                            </div>
+                            <span className="user-name">
+                                {user.username || user.fullName}
+                            </span>
+                        </div>
                         <button className="btn-logout" onClick={handleLogout}>
                             Logout
                         </button>
