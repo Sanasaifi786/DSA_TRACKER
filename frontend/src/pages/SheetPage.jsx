@@ -32,7 +32,7 @@ function SheetPage() {
         setLoading(true);
         setError("");
         try {
-            const res  = await fetch(`http://localhost:8000/api/v1/questions?sheet=${sheet}`);
+            const res  = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/questions?sheet=${sheet}`);
             const data = await res.json();
             if (!res.ok) throw new Error(data.message);
             setGroupedQuestions(data); // { "Arrays": [...], ... }
@@ -77,7 +77,7 @@ function SheetPage() {
         }
         setToggling(questionId);
         try {
-            const res  = await fetch(`http://localhost:8000/api/v1/progress/toggle/${questionId}`, {
+            const res  = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api/v1/progress/toggle/${questionId}`, {
                 method:  "POST",
                 headers: { Authorization: `Bearer ${token}` },
             });
